@@ -63,6 +63,45 @@
   </div>
 </section>
 
+<!-- LIVE DEMO PANEL -->
+<section class="section">
+  <h2>Live Demo</h2>
+
+  <div class="card">
+    <h3>Support</h3>
+    <input id="supportInput" placeholder="Type support message" style="width:100%;padding:8px;">
+    <button onclick="callSupport()" style="margin-top:10px;">Send to Support</button>
+    <div id="supportOutput" style="margin-top:10px;color:#1a73e8;"></div>
+  </div>
+
+  <div class="card">
+    <h3>Sales Email</h3>
+    <input id="salesEmailInput" placeholder="Email message" style="width:100%;padding:8px;">
+    <button onclick="callSalesEmail()" style="margin-top:10px;">Send Sales Email</button>
+    <div id="salesEmailOutput" style="margin-top:10px;color:#1a73e8;"></div>
+  </div>
+
+  <div class="card">
+    <h3>Sales Chat</h3>
+    <input id="salesChatInput" placeholder="Chat message" style="width:100%;padding:8px;">
+    <button onclick="callSalesChat()" style="margin-top:10px;">Send Sales Chat</button>
+    <div id="salesChatOutput" style="margin-top:10px;color:#1a73e8;"></div>
+  </div>
+
+  <div class="card">
+    <h3>Marketing</h3>
+    <input id="marketingTopic" placeholder="Marketing topic" style="width:100%;padding:8px;">
+    <select id="marketingPlatform" style="width:100%;padding:8px;margin-top:10px;">
+      <option value="linkedin">LinkedIn</option>
+      <option value="facebook">Facebook</option>
+      <option value="twitter">Twitter</option>
+    </select>
+    <button onclick="callMarketing()" style="margin-top:10px;">Post Marketing</button>
+    <div id="marketingOutput" style="margin-top:10px;color:#1a73e8;"></div>
+  </div>
+</section>
+<!-- END DEMO PANEL -->
+
 <footer>
   &copy; <span id="year"></span> AI Business Suite. All rights reserved.
 </footer>
@@ -70,6 +109,7 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+<script src="app.js"></script>
 
 </body>
 </html>
