@@ -20,8 +20,8 @@ const logStream = createStream("ai-business-suite.log", {
 
 const consoleLogger = pino({ level: "info" });
 const fileLogger = pino({ level: "info" }, logStream);
-
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public")); // serves everything in /public
 
 // API key middleware
