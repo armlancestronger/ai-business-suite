@@ -2,147 +2,137 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Support Ops Toolbox — Powered by support-tools-clean</title>
+  <title>Support Ops Toolbox — AI Business Suite</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
-      color: #222;
-    }
-    header {
-      background: #1a73e8;
-      padding: 1.2rem 2rem;
-      color: white;
-      font-size: 1.6rem;
-      font-weight: bold;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header a {
-      color: white;
-      text-decoration: none;
-      margin-left: 12px;
-      font-size: 0.95rem;
-    }
-    .container {
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .intro {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin-bottom: 2rem;
-      border: 1px solid #ddd;
-    }
-    .tool-card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-      margin-bottom: 2rem;
-    }
-    .tool-card h2 {
-      margin-top: 0;
-    }
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: 6px;
-      margin-top: 1rem;
-    }
-    .cta-box {
-      background: #1a73e8;
-      color: white;
-      padding: 2rem;
-      border-radius: 8px;
-      text-align: center;
-      margin-top: 3rem;
-    }
-    .cta-box h2 {
-      margin-top: 0;
-    }
-    .cta-btn {
-      background: white;
-      color: #1a73e8;
-      padding: 0.8rem 1.6rem;
-      border-radius: 6px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      margin-top: 1rem;
-    }
-    .cta-btn:hover {
-      background: #e8eefc;
-    }
+    body { margin: 0; font-family: Arial, sans-serif; background: #0b1020; color: #f5f7fa; }
+    header { padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: bold; font-size: 1.3rem; }
+    .nav a { margin-left: 16px; color: #f5f7fa; text-decoration: none; }
+    .nav a.btn { padding: 8px 14px; background: #1a73e8; border-radius: 4px; }
+    .hero { padding: 60px 20px; max-width: 900px; margin: 0 auto; text-align: left; }
+    h1 { font-size: 2.2rem; margin-bottom: 10px; }
+    p { line-height: 1.5; }
+    .section { padding: 40px 20px; max-width: 900px; margin: 0 auto; }
+    .card { background: #141a33; padding: 16px; border-radius: 8px; margin-bottom: 16px; }
+    .badge { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: #9aa4c6; margin-bottom: 6px; }
+    .cta-btn { display: inline-block; margin-top: 10px; padding: 8px 14px; background: #1a73e8; color: #fff; border-radius: 4px; text-decoration: none; font-size: 0.9rem; }
+    .cta-secondary { background: transparent; border: 1px solid #1a73e8; }
+    footer { padding: 20px; text-align: center; font-size: 0.9rem; color: #aaa; }
+    .lead-form { margin-top: 20px; background: #141a33; padding: 16px; border-radius: 8px; }
+    .lead-form input { width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #333a55; background: #0b1020; color: #f5f7fa; }
   </style>
 </head>
-
 <body>
 
 <header>
-  <div>Support Ops Toolbox — Powered by support-tools-clean</div>
-  <div>
+  <div class="logo">AI Business Suite</div>
+  <div class="nav">
     <a href="/index.html">Home</a>
     <a href="/pricing.html">Pricing</a>
-    <a href="/admin/dashboard">Admin Dashboard</a>
+    <a class="btn" href="/admin/dashboard">Admin Dashboard</a>
   </div>
 </header>
 
-<div class="container">
+<section class="hero">
+  <div class="badge">Support Ops Toolbox — Powered by support-tools-clean</div>
+  <h1>Instant Automation Demos for Support Teams</h1>
+  <p>
+    <strong>support-tools-clean</strong> is the micro-tool demo suite behind AI Business Suite. These tools solve real
+    support pain points — SLA breaches, bad tagging, and agent overload — and show how the full platform
+    automates your workflows end-to-end.
+  </p>
+  <p>
+    Try each tool below. Then unlock the full AI Business Suite to automate everything across your support, sales,
+    and marketing teams.
+  </p>
+</section>
 
-  <div class="intro">
-    <h2>Instant Automation Demos for Support Teams</h2>
-    <p>
-      <strong>support-tools-clean</strong> is the micro-tool demo suite behind AI Business Suite.
-      These tools solve real support pain points — SLA breaches, bad tagging, and agent overload —
-      and show how the full platform automates your workflows end-to-end.
-    </p>
-    <p>
-      Try each tool below. Then unlock the full AI Business Suite to automate everything across your support, sales, and marketing teams.
-    </p>
-  </div>
-
-  <div class="tool-card">
+<section class="section">
+  <div class="card">
     <h2>📊 SLA Breach Predictor</h2>
     <p>
       Predict SLA failures before they happen. This demo shows how support-tools-clean identifies risk and prevents customer escalations.
     </p>
-    <iframe src="https://support-tools-clean.pages.dev/index.html"></iframe>
+    <a class="cta-btn" href="#demo">Try in Live Demo</a>
   </div>
 
-  <div class="tool-card">
+  <div class="card">
     <h2>🏷️ Ticket Tagging Auditor</h2>
     <p>
       Bad tagging destroys reporting and automation. This tool demonstrates how support-tools-clean cleans up messy support data instantly.
     </p>
-    <iframe src="https://support-tools-clean.pages.dev/tagging.html"></iframe>
+    <a class="cta-btn" href="#demo">Try in Live Demo</a>
   </div>
 
-  <div class="tool-card">
+  <div class="card">
     <h2>⚖️ Agent Load Balancer</h2>
     <p>
-      Prevent burnout and improve response times by distributing workload intelligently.
-      This demo shows the optimization engine behind support-tools-clean.
+      Prevent burnout and improve response times by distributing workload intelligently. This demo shows the optimization engine behind support-tools-clean.
     </p>
-    <iframe src="https://support-tools-clean.pages.dev/loadbalancer.html"></iframe>
+    <a class="cta-btn" href="#demo">Try in Live Demo</a>
+  </div>
+</section>
+
+<section class="section" id="demo">
+  <h2>Live Support Automation Demo</h2>
+  <p>Use real prompts your team handles today to see how AI Business Suite responds.</p>
+
+  <div class="card">
+    <h3>Support</h3>
+    <input id="supportInput" placeholder="Paste a real support ticket…" />
+    <button class="cta-btn" onclick="callSupport()">Run Support Automation</button>
+    <div id="supportOutput" style="margin-top:10px;color:#1a73e8;"></div>
   </div>
 
-  <div class="cta-box">
-    <h2>Ready to Automate Your Entire Support Operation?</h2>
-    <p>
-      These demos are just the beginning. Unlock full automation, AI agents, dashboards, and workflow intelligence with AI Business Suite.
-    </p>
-    <button class="cta-btn" onclick="window.location.href='/pricing.html'">Start Your 14‑Day Trial</button>
+  <div class="card">
+    <h3>Sales Escalation</h3>
+    <input id="salesEmailInput" placeholder="Escalation or upsell opportunity from support…" />
+    <button class="cta-btn" onclick="callSalesEmail()">Generate Sales Follow-Up</button>
+    <div id="salesEmailOutput" style="margin-top:10px;color:#1a73e8;"></div>
   </div>
 
-</div>
+  <div class="card">
+    <h3>Proactive Outreach</h3>
+    <input id="marketingTopic" placeholder="Churn risk segment or support trend…" />
+    <select id="marketingPlatform" style="width:100%;padding:8px;margin-top:10px;">
+      <option value="email">Email Campaign</option>
+      <option value="linkedin">LinkedIn Post</option>
+      <option value="in-app">In‑app Message</option>
+    </select>
+    <button class="cta-btn" style="margin-top:10px;" onclick="callMarketing()">Generate Campaign Idea</button>
+    <div id="marketingOutput" style="margin-top:10px;color:#1a73e8;"></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Ready to automate your entire support operation?</h2>
+  <p>
+    These demos are just the beginning. Unlock full automation, AI agents, dashboards, and workflow intelligence with AI Business Suite.
+  </p>
+
+  <div class="lead-form">
+    <h3>Start Your 14‑Day Trial</h3>
+    <p>Drop your email and we’ll send a trial link and onboarding checklist.</p>
+    <form action="mailto:you@example.com" method="post" enctype="text/plain">
+      <input type="email" name="email" placeholder="you@company.com" required />
+      <input type="text" name="company" placeholder="Company (optional)" />
+      <button class="cta-btn" type="submit">Request Trial Access</button>
+    </form>
+    <p style="font-size:0.8rem;color:#9aa4c6;margin-top:8px;">
+      Replace <code>you@example.com</code> in the form action with your real email.
+    </p>
+  </div>
+</section>
+
+<footer>
+  &copy; <span id="year"></span> AI Business Suite. All rights reserved.
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+<script src="app.js"></script>
 
 </body>
 </html>
