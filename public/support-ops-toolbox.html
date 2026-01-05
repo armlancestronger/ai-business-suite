@@ -29,7 +29,6 @@
   <div class="nav">
     <a href="/index.html">Home</a>
     <a href="/pricing.html">Pricing</a>
-    <a class="btn" href="/admin/dashboard">Admin Dashboard</a>
   </div>
 </header>
 
@@ -50,32 +49,26 @@
 <section class="section">
   <div class="card">
     <h2>📊 SLA Breach Predictor</h2>
-    <p>
-      Predict SLA failures before they happen. This demo shows how support-tools-clean identifies risk and prevents customer escalations.
-    </p>
+    <p>Predict SLA failures before they happen.</p>
     <a class="cta-btn" href="#demo">Try in Live Demo</a>
   </div>
 
   <div class="card">
     <h2>🏷️ Ticket Tagging Auditor</h2>
-    <p>
-      Bad tagging destroys reporting and automation. This tool demonstrates how support-tools-clean cleans up messy support data instantly.
-    </p>
+    <p>Clean up messy support tagging and restore reliable reporting.</p>
     <a class="cta-btn" href="#demo">Try in Live Demo</a>
   </div>
 
   <div class="card">
     <h2>⚖️ Agent Load Balancer</h2>
-    <p>
-      Prevent burnout and improve response times by distributing workload intelligently. This demo shows the optimization engine behind support-tools-clean.
-    </p>
+    <p>Distribute workload intelligently and prevent burnout.</p>
     <a class="cta-btn" href="#demo">Try in Live Demo</a>
   </div>
 </section>
 
 <section class="section" id="demo">
   <h2>Live Support Automation Demo</h2>
-  <p>Use real prompts your team handles today to see how AI Business Suite responds.</p>
+  <p>Use prompts your team actually sees to test the tools.</p>
 
   <div class="card">
     <h3>Support</h3>
@@ -104,15 +97,11 @@
   </div>
 </section>
 
-<section class="section">
-  <h2>Ready to automate your entire support operation?</h2>
-  <p>
-    These demos are just the beginning. Unlock full automation, AI agents, dashboards, and workflow intelligence with AI Business Suite.
-  </p>
+<section class="section" id="trial">
+  <h2>Start Your 14‑Day Trial</h2>
+  <p>Drop your email and we’ll send a trial link and onboarding checklist.</p>
 
   <div class="lead-form">
-    <h3>Start Your 14‑Day Trial</h3>
-    <p>Drop your email and we’ll send a trial link and onboarding checklist.</p>
     <form id="toolboxTrialForm">
       <input type="email" name="email" placeholder="you@company.com" required />
       <input type="text" name="company" placeholder="Company (optional)" />
@@ -131,7 +120,6 @@
 
   document.getElementById("toolboxTrialForm").addEventListener("submit", async (e) => {
     e.preventDefault();
-
     const formData = new FormData(e.target);
     const body = Object.fromEntries(formData.entries());
 
@@ -143,7 +131,6 @@
       });
 
       const data = await res.json();
-
       if (data.success) {
         alert("Your trial request has been submitted. Check your email soon.");
         e.target.reset();

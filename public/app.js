@@ -1,8 +1,9 @@
 async function callSupport() {
   const input = document.getElementById("supportInput");
   const output = document.getElementById("supportOutput");
-  const message = input.value.trim();
+  if (!input || !output) return;
 
+  const message = input.value.trim();
   if (!message) {
     output.textContent = "Please enter a support message.";
     return;
@@ -27,8 +28,9 @@ async function callSupport() {
 async function callSalesEmail() {
   const input = document.getElementById("salesEmailInput");
   const output = document.getElementById("salesEmailOutput");
-  const message = input.value.trim();
+  if (!input || !output) return;
 
+  const message = input.value.trim();
   if (!message) {
     output.textContent = "Please enter a sales email context.";
     return;
@@ -53,8 +55,9 @@ async function callSalesEmail() {
 async function callSalesChat() {
   const input = document.getElementById("salesChatInput");
   const output = document.getElementById("salesChatOutput");
-  const message = input.value.trim();
+  if (!input || !output) return;
 
+  const message = input.value.trim();
   if (!message) {
     output.textContent = "Please enter a sales chat message.";
     return;
@@ -80,6 +83,7 @@ async function callMarketing() {
   const topicInput = document.getElementById("marketingTopic");
   const platformSelect = document.getElementById("marketingPlatform");
   const output = document.getElementById("marketingOutput");
+  if (!topicInput || !platformSelect || !output) return;
 
   const topic = topicInput.value.trim();
   const platform = platformSelect.value;

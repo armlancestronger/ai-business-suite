@@ -16,17 +16,12 @@ app.use(express.static(path.join(__dirname, "public")));
  * =========================
  *  CORE API ENDPOINTS
  * =========================
- * Adjust these to match your existing logic.
  */
 
-// Support webhook (example)
 app.post("/webhook/whatsapp", async (req, res) => {
   try {
     const { message } = req.body;
-
-    // TODO: Replace with your real support logic
     const reply = `Support automation received: ${message || "No message provided"}`;
-
     return res.json({ reply });
   } catch (err) {
     console.error("Support webhook error:", err);
@@ -34,14 +29,10 @@ app.post("/webhook/whatsapp", async (req, res) => {
   }
 });
 
-// Sales email
 app.post("/sales/email", async (req, res) => {
   try {
     const { message } = req.body;
-
-    // TODO: Replace with your real sales email logic
     const reply = `Sales email suggestion for: ${message || "No message provided"}`;
-
     return res.json({ reply });
   } catch (err) {
     console.error("Sales email error:", err);
@@ -49,14 +40,10 @@ app.post("/sales/email", async (req, res) => {
   }
 });
 
-// Sales chat
 app.post("/sales/chat", async (req, res) => {
   try {
     const { message } = req.body;
-
-    // TODO: Replace with your real sales chat logic
     const reply = `Sales chat response for: ${message || "No message provided"}`;
-
     return res.json({ reply });
   } catch (err) {
     console.error("Sales chat error:", err);
@@ -64,14 +51,10 @@ app.post("/sales/chat", async (req, res) => {
   }
 });
 
-// Marketing
 app.post("/marketing/post", async (req, res) => {
   try {
     const { topic, platform } = req.body;
-
-    // TODO: Replace with your real marketing logic
     const reply = `Marketing idea for ${platform || "general"} on: ${topic || "No topic provided"}`;
-
     return res.json({ reply });
   } catch (err) {
     console.error("Marketing error:", err);
@@ -93,7 +76,6 @@ app.post("/trial-request", async (req, res) => {
       return res.status(400).json({ error: "Email is required" });
     }
 
-    // Email transport via Gmail
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -128,9 +110,8 @@ Submitted at: ${new Date().toLocaleString()}
 
 /**
  * =========================
- *  FALLBACK ROUTES
+ *  ROUTES
  * =========================
- * Serve main pages explicitly (optional but clear).
  */
 
 app.get("/", (req, res) => {
@@ -143,10 +124,6 @@ app.get("/pricing.html", (req, res) => {
 
 app.get("/support-ops-toolbox.html", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "support-ops-toolbox.html"));
-});
-
-app.get("/admin/dashboard", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "admin", "dashboard.html"));
 });
 
 // Start server
