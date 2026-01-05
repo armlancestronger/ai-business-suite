@@ -23,7 +23,7 @@
     ul { padding-left: 18px; font-size: 0.95rem; }
     li { margin-bottom: 6px; }
     .badge { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: #9aa4c6; margin-bottom: 6px; }
-    .cta-btn { display: inline-block; margin-top: 10px; padding: 8px 14px; background: #1a73e8; color: #fff; border-radius: 4px; text-decoration: none; font-size: 0.9rem; }
+    .cta-btn { display: inline-block; margin-top: 10px; padding: 8px 14px; background: #1a73e8; color: #fff; border-radius: 4px; text-decoration: none; font-size: 0.9rem; border: none; cursor: pointer; }
     .cta-secondary { background: transparent; border: 1px solid #1a73e8; }
     .lead-form { margin-top: 30px; background: #141a33; padding: 16px; border-radius: 8px; }
     .lead-form input { width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #333a55; background: #0b1020; color: #f5f7fa; }
@@ -100,15 +100,12 @@
   <p>No credit card required. We’ll set up your environment, plug into your tools, and ship a live automation.</p>
 
   <div class="lead-form">
-    <form action="mailto:you@example.com" method="post" enctype="text/plain">
+    <form id="pricingTrialForm">
       <input type="email" name="email" placeholder="you@company.com" required />
       <input type="text" name="company" placeholder="Company" required />
       <input type="text" name="team_size" placeholder="Team size (e.g. 5 agents)" />
       <button class="cta-btn" type="submit">Request Trial Access</button>
     </form>
-    <p style="font-size:0.8rem;color:#9aa4c6;margin-top:8px;">
-      Replace <code>you@example.com</code> in the form action with your real email to capture leads.
-    </p>
   </div>
 </section>
 
@@ -118,11 +115,32 @@
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-<!-- Analytics hook placeholder -->
-<script>
-  // Example analytics hook – replace with your provider (Plausible, GA4, etc.)
-  // window.analytics && analytics.track("pricing_page_view");
+
+  document.getElementById("pricingTrialForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const body = Object.fromEntries(formData.entries());
+
+    try {
+      const res = await fetch("/trial-request", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        alert("Your trial request has been submitted. Check your email soon.");
+        e.target.reset();
+      } else {
+        alert("Error submitting trial request: " + (data.error || "Unknown error"));
+      }
+    } catch (err) {
+      alert("Network error submitting trial request.");
+    }
+  });
 </script>
 
 </body>

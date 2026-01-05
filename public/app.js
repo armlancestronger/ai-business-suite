@@ -1,48 +1,106 @@
-// SUPPORT
 async function callSupport() {
-  const message = document.getElementById("supportInput").value;
-  const res = await fetch("/webhook/whatsapp", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ message })
-  });
-  const data = await res.json();
-  document.getElementById("supportOutput").innerText = data.reply;
+  const input = document.getElementById("supportInput");
+  const output = document.getElementById("supportOutput");
+  const message = input.value.trim();
+
+  if (!message) {
+    output.textContent = "Please enter a support message.";
+    return;
+  }
+
+  output.textContent = "Running support automation...";
+
+  try {
+    const res = await fetch("/webhook/whatsapp", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message })
+    });
+
+    const data = await res.json();
+    output.textContent = data.reply || "No response from support endpoint.";
+  } catch (err) {
+    output.textContent = "Error calling support endpoint.";
+  }
 }
 
-// SALES EMAIL
 async function callSalesEmail() {
-  const body = document.getElementById("salesEmailInput").value;
-  const res = await fetch("/sales/email", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ from: "customer@example.com", body })
-  });
-  const data = await res.json();
-  document.getElementById("salesEmailOutput").innerText = data.pitch;
+  const input = document.getElementById("salesEmailInput");
+  const output = document.getElementById("salesEmailOutput");
+  const message = input.value.trim();
+
+  if (!message) {
+    output.textContent = "Please enter a sales email context.";
+    return;
+  }
+
+  output.textContent = "Generating sales email...";
+
+  try {
+    const res = await fetch("/sales/email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message })
+    });
+
+    const data = await res.json();
+    output.textContent = data.reply || "No response from sales email endpoint.";
+  } catch (err) {
+    output.textContent = "Error calling sales email endpoint.";
+  }
 }
 
-// SALES CHAT
 async function callSalesChat() {
-  const message = document.getElementById("salesChatInput").value;
-  const res = await fetch("/sales/chat", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ message })
-  });
-  const data = await res.json();
-  document.getElementById("salesChatOutput").innerText = data.pitch;
+  const input = document.getElementById("salesChatInput");
+  const output = document.getElementById("salesChatOutput");
+  const message = input.value.trim();
+
+  if (!message) {
+    output.textContent = "Please enter a sales chat message.";
+    return;
+  }
+
+  output.textContent = "Generating sales chat reply...";
+
+  try {
+    const res = await fetch("/sales/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message })
+    });
+
+    const data = await res.json();
+    output.textContent = data.reply || "No response from sales chat endpoint.";
+  } catch (err) {
+    output.textContent = "Error calling sales chat endpoint.";
+  }
 }
 
-// MARKETING
 async function callMarketing() {
-  const topic = document.getElementById("marketingTopic").value;
-  const platform = document.getElementById("marketingPlatform").value;
-  const res = await fetch("/marketing/post", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ topic, platform })
-  });
-  const data = await res.json();
-  document.getElementById("marketingOutput").innerText = data.reply;
+  const topicInput = document.getElementById("marketingTopic");
+  const platformSelect = document.getElementById("marketingPlatform");
+  const output = document.getElementById("marketingOutput");
+
+  const topic = topicInput.value.trim();
+  const platform = platformSelect.value;
+
+  if (!topic) {
+    output.textContent = "Please enter a marketing topic.";
+    return;
+  }
+
+  output.textContent = "Generating marketing content...";
+
+  try {
+    const res = await fetch("/marketing/post", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ topic, platform })
+    });
+
+    const data = await res.json();
+    output.textContent = data.reply || "No response from marketing endpoint.";
+  } catch (err) {
+    output.textContent = "Error calling marketing endpoint.";
+  }
 }

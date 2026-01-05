@@ -16,11 +16,10 @@
     .section { padding: 40px 20px; max-width: 900px; margin: 0 auto; }
     .card { background: #141a33; padding: 16px; border-radius: 8px; margin-bottom: 16px; }
     .badge { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: #9aa4c6; margin-bottom: 6px; }
-    .cta-btn { display: inline-block; margin-top: 10px; padding: 8px 14px; background: #1a73e8; color: #fff; border-radius: 4px; text-decoration: none; font-size: 0.9rem; }
-    .cta-secondary { background: transparent; border: 1px solid #1a73e8; }
-    footer { padding: 20px; text-align: center; font-size: 0.9rem; color: #aaa; }
+    .cta-btn { display: inline-block; margin-top: 10px; padding: 8px 14px; background: #1a73e8; color: #fff; border-radius: 4px; text-decoration: none; font-size: 0.9rem; border: none; cursor: pointer; }
     .lead-form { margin-top: 20px; background: #141a33; padding: 16px; border-radius: 8px; }
     .lead-form input { width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #333a55; background: #0b1020; color: #f5f7fa; }
+    footer { padding: 20px; text-align: center; font-size: 0.9rem; color: #aaa; }
   </style>
 </head>
 <body>
@@ -114,14 +113,12 @@
   <div class="lead-form">
     <h3>Start Your 14‑Day Trial</h3>
     <p>Drop your email and we’ll send a trial link and onboarding checklist.</p>
-    <form action="mailto:you@example.com" method="post" enctype="text/plain">
+    <form id="toolboxTrialForm">
       <input type="email" name="email" placeholder="you@company.com" required />
       <input type="text" name="company" placeholder="Company (optional)" />
+      <input type="text" name="team_size" placeholder="Team size (optional)" />
       <button class="cta-btn" type="submit">Request Trial Access</button>
     </form>
-    <p style="font-size:0.8rem;color:#9aa4c6;margin-top:8px;">
-      Replace <code>you@example.com</code> in the form action with your real email.
-    </p>
   </div>
 </section>
 
@@ -131,6 +128,32 @@
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  document.getElementById("toolboxTrialForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const body = Object.fromEntries(formData.entries());
+
+    try {
+      const res = await fetch("/trial-request", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        alert("Your trial request has been submitted. Check your email soon.");
+        e.target.reset();
+      } else {
+        alert("Error submitting trial request: " + (data.error || "Unknown error"));
+      }
+    } catch (err) {
+      alert("Network error submitting trial request.");
+    }
+  });
 </script>
 <script src="app.js"></script>
 
