@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Business Suite – Operator Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-dot"></div>
+        <div class="logo-text">
+          <span class="logo-main">AI Business Suite</span>
+          <span class="logo-sub">Operator Panel</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-item active" data-view="trial">
+          <span>Trials</span>
+        </button>
+        <button class="nav-item" data-view="support">
+          <span>Support Automation</span>
+        </button>
+        <button class="nav-item" data-view="leads">
+          <span>Lead Intake</span>
+        </button>
+        <button class="nav-item" data-view="campaigns">
+          <span>Email Campaigns</span>
+        </button>
+        <button class="nav-item" data-view="analytics">
+          <span>Analytics</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span class="sidebar-footnote">v1 · Internal operator view</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="main-header">
+        <div>
+          <h1 id="view-title">Trials</h1>
+          <p id="view-subtitle">Capture and route trial requests into your pipeline.</p>
+        </div>
+      </header>
+
+      <section class="main-body">
+        <!-- Trials view -->
+        <div id="view-trial" class="view active">
+          <div class="card">
+            <h2>Start a Trial</h2>
+            <p class="subtext">
+              Use this when capturing a prospect live or embedding into a landing workflow.
+            </p>
+
+            <form id="trial-form">
+              <div class="field-row">
+                <div class="field">
+                  <label for="email">Work email</label>
+                  <input type="email" id="email" name="email" required placeholder="you@company.com" />
+                </div>
+                <div class="field">
+                  <label for="company">Company</label>
+                  <input type="text" id="company" name="company" required placeholder="Company name" />
+                </div>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="team_size">Team size</label>
+                  <select id="team_size" name="team_size" required>
+                    <option value="">Select team size</option>
+                    <option value="1-5">1–5</option>
+                    <option value="6-15">6–15</option>
+                    <option value="16-50">16–50</option>
+                    <option value="51-200">51–200</option>
+                    <option value="200+">200+</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="submit" id="submit-btn">Create Trial Request</button>
+            </form>
+
+            <div id="status" class="status hidden"></div>
+          </div>
+        </div>
+
+        <!-- Support view -->
+        <div id="view-support" class="view">
+          <div class="card">
+            <h2>Support Automation</h2>
+            <p class="subtext">
+              Capture a support message and pipe it through your AI + inbox.
+            </p>
+
+            <form id="support-form">
+              <div class="field">
+                <label for="support-from">From (email or name)</label>
+                <input type="text" id="support-from" name="from" required placeholder="customer@domain.com" />
+              </div>
+              <div class="field">
+                <label for="support-message">Message</label>
+                <textarea id="support-message" name="message" rows="4" required placeholder="Describe the issue..."></textarea>
+              </div>
+              <button type="submit">Send Support Message</button>
+            </form>
+
+            <div id="support-status" class="status hidden"></div>
+          </div>
+        </div>
+
+        <!-- Leads view -->
+        <div id="view-leads" class="view">
+          <div class="card">
+            <h2>Lead Intake</h2>
+            <p class="subtext">
+              Capture a lead and route it into your sales workflow.
+            </p>
+
+            <form id="lead-form">
+              <div class="field-row">
+                <div class="field">
+                  <label for="lead-name">Name</label>
+                  <input type="text" id="lead-name" name="name" required placeholder="Full name" />
+                </div>
+                <div class="field">
+                  <label for="lead-email">Email</label>
+                  <input type="email" id="lead-email" name="email" required placeholder="lead@company.com" />
+                </div>
+              </div>
+              <div class="field">
+                <label for="lead-source">Source</label>
+                <input type="text" id="lead-source" name="source" placeholder="LinkedIn, website, referral, etc." />
+              </div>
+              <button type="submit">Capture Lead</button>
+            </form>
+
+            <div id="lead-status" class="status hidden"></div>
+          </div>
+        </div>
+
+        <!-- Campaigns view -->
+        <div id="view-campaigns" class="view">
+          <div class="card">
+            <h2>Email Campaigns</h2>
+            <p class="subtext">
+              Trigger a one-off outbound email via Resend.
+            </p>
+
+            <form id="campaign-form">
+              <div class="field">
+                <label for="campaign-to">To</label>
+                <input type="email" id="campaign-to" name="to" required placeholder="prospect@company.com" />
+              </div>
+              <div class="field">
+                <label for="campaign-subject">Subject</label>
+                <input type="text" id="campaign-subject" name="subject" required placeholder="Subject line" />
+              </div>
+              <div class="field">
+                <label for="campaign-body">Body (HTML allowed)</label>
+                <textarea id="campaign-body" name="body" rows="5" required placeholder="<p>Your message...</p>"></textarea>
+              </div>
+              <button type="submit">Send Campaign</button>
+            </form>
+
+            <div id="campaign-status" class="status hidden"></div>
+          </div>
+        </div>
+
+        <!-- Analytics view -->
+        <div id="view-analytics" class="view">
+          <div class="card">
+            <h2>Activity Feed</h2>
+            <p class="subtext">
+              Simple in-memory events feed (expandable to a real store later).
+            </p>
+            <div id="analytics-feed" class="analytics-feed">
+              <p class="placeholder">No events loaded yet.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>AI Business Suite · Operator View</span>
+      </footer>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

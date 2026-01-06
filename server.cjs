@@ -29,7 +29,7 @@ app.post("/trial-request", async (req, res) => {
       text: `New trial request:\n\nEmail: ${email}\nCompany: ${company || "N/A"}\nTeam Size: ${team_size || "N/A"}`
     });
 
-    console.log("Resend response:", result);
+       console.log("Resend response:", result);
 
     return res.json({ success: true, message: "Trial request submitted" });
 
@@ -37,9 +37,13 @@ app.post("/trial-request", async (req, res) => {
     console.error("Resend error in /trial-request:", error);
     return res.status(500).json({ error: "Failed to submit trial request" });
   }
+
 });
 
+// START SERVER
 const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
