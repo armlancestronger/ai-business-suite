@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Support Ops Toolbox | AI Business Suite</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the Support Ops Toolbox inside AI Business Suite — opinionated tools for support leaders.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">AI Business Suite</div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="support-ops-toolbox.html">Support Ops Toolbox</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">Support Ops Toolbox</h1>
+        <p class="page-subtitle">
+          A focused workspace for support leaders to design, monitor, and continuously improve their
+          operations — built on top of AI Business Suite.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container support-tools-grid">
+        <div class="card support-tools-list">
+          <h2>What&apos;s in the toolbox</h2>
+          <p>
+            The Support Ops Toolbox bundles together the most important automations and views for
+            customer support teams:
+          </p>
+          <ul>
+            <li>AI macros that summarize conversations and suggest next best actions.</li>
+            <li>Intelligent routing rules that respect priority, skills, and SLAs.</li>
+            <li>Deflection flows that surface docs, FAQs, and AI answers before a ticket is created.</li>
+            <li>Health views for backlogs, first response time, and SLA risk.</li>
+            <li>Audit logs for every AI interaction in your support environment.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Try it from the main demo</h2>
+          <p>
+            On the <a class="link-inline" href="index.html">main AI Business Suite page</a>, the
+            <strong>Support</strong> panel in the Live Demo simulates a typical support flow, including
+            logging an issue and triggering routing and SLA tracking.
+          </p>
+          <p>
+            In a full deployment, these flows plug into your existing help desk stack, giving Support Ops
+            granular control over where AI is allowed to act.
+          </p>
+          <div style="margin-top: 1.1rem; display: flex; flex-wrap: wrap; gap: 0.75rem;">
+            <a href="index.html" class="btn btn-secondary">Back to main demo</a>
+            <a href="pricing.html" class="btn btn-primary">View pricing</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="currentYear"></span> AI Business Suite. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var yearSpan = document.getElementById('currentYear');
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    })();
+  </script>
+</body>
+</html>

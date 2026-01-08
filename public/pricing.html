@@ -1,145 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Pricing — AI Business Suite</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #0b1020; color: #f5f7fa; }
-    header { padding: 20px; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-weight: bold; font-size: 1.3rem; }
-    .nav a { margin-left: 16px; color: #f5f7fa; text-decoration: none; }
-    .hero { padding: 60px 20px 30px; max-width: 900px; margin: 0 auto; text-align: left; }
-    h1 { font-size: 2.2rem; margin-bottom: 10px; }
-    p { line-height: 1.5; }
-    .section { padding: 20px; max-width: 900px; margin: 0 auto; }
-    .pricing-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
-    @media (min-width: 800px) { .pricing-grid { grid-template-columns: repeat(3, 1fr); } }
-    .card { background: #141a33; padding: 16px; border-radius: 8px; }
-    .plan-name { font-size: 1.1rem; font-weight: bold; margin-bottom: 4px; }
-    .price { font-size: 1.6rem; margin: 8px 0; }
-    .price span { font-size: 0.9rem; color: #9aa4c6; }
-    ul { padding-left: 18px; font-size: 0.95rem; }
-    li { margin-bottom: 6px; }
-    .badge { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: #9aa4c6; margin-bottom: 6px; }
-    .cta-btn { display: inline-block; margin-top: 10px; padding: 8px 14px; background: #1a73e8; color: #fff; border-radius: 4px; text-decoration: none; font-size: 0.9rem; border: none; cursor: pointer; }
-    .cta-secondary { background: transparent; border: 1px solid #1a73e8; }
-    .lead-form { margin-top: 30px; background: #141a33; padding: 16px; border-radius: 8px; }
-    .lead-form input { width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #333a55; background: #0b1020; color: #f5f7fa; }
-    footer { padding: 20px; text-align: center; font-size: 0.9rem; color: #aaa; }
-  </style>
+  <meta charset="UTF-8">
+  <title>Pricing | AI Business Suite</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pricing for AI Business Suite — plans for teams of every size.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header>
-  <div class="logo">AI Business Suite</div>
-  <div class="nav">
-    <a href="/index.html">Home</a>
-    <a href="/support-ops-toolbox.html">Support Ops Toolbox</a>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="badge">Pricing</div>
-  <h1>Simple plans that scale with your team</h1>
-  <p>
-    Start with instant demos, then graduate to full automation across support, sales, and marketing — all with clear,
-    predictable pricing.
-  </p>
-</section>
-
-<section class="section">
-  <div class="pricing-grid">
-    <div class="card">
-      <div class="plan-name">Starter</div>
-      <div class="price">$79 <span>/ month</span></div>
-      <p>For solo founders and small teams getting started with automation.</p>
-      <ul>
-        <li>Up to 3 team members</li>
-        <li>Support Ops Toolbox access</li>
-        <li>Basic AI workflows (support only)</li>
-        <li>Email support</li>
-      </ul>
-      <a class="cta-btn" href="#trial">Start 14‑Day Trial</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">AI Business Suite</div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="support-ops-toolbox.html">Support Ops Toolbox</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="card">
-      <div class="plan-name">Growth</div>
-      <div class="price">$249 <span>/ month</span></div>
-      <p>For growing teams that want deep automation across support and sales.</p>
-      <ul>
-        <li>Up to 15 team members</li>
-        <li>All Starter features</li>
-        <li>Sales + marketing orchestration</li>
-        <li>Advanced routing and SLA rules</li>
-        <li>Priority support</li>
-      </ul>
-      <a class="cta-btn" href="#trial">Start 14‑Day Trial</a>
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">Pricing</h1>
+        <p class="page-subtitle">
+          Start small, then scale AI Business Suite across support, sales, and marketing as your team
+          grows. All plans include transparent logs and observability.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="pricing-grid">
+          <!-- Starter -->
+          <article class="card pricing-card">
+            <div>
+              <div class="pricing-name">Starter</div>
+              <div class="pricing-price">
+                $49<span>/agent/month</span>
+              </div>
+            </div>
+            <ul class="pricing-features">
+              <li>Shared workspace for support, sales, and marketing.</li>
+              <li>Core automation templates for email and chat.</li>
+              <li>Live Demo toolkit for internal experimentation.</li>
+              <li>Basic logs for AI prompts and responses.</li>
+            </ul>
+            <div style="margin-top: 0.9rem;">
+              <a href="index.html" class="btn btn-secondary">Try the live demo</a>
+            </div>
+          </article>
+
+          <!-- Growth -->
+          <article class="card pricing-card">
+            <div>
+              <div class="pricing-name">Growth</div>
+              <div class="pricing-price">
+                $149<span>/agent/month</span>
+              </div>
+            </div>
+            <ul class="pricing-features">
+              <li>Everything in Starter plus advanced routing rules.</li>
+              <li>Customizable playbooks for support and sales teams.</li>
+              <li>Segmented analytics by queue, channel, and region.</li>
+              <li>Priority access to new AI models and features.</li>
+            </ul>
+            <div style="margin-top: 0.9rem;">
+              <a href="index.html" class="btn btn-primary">Talk to sales</a>
+            </div>
+          </article>
+
+          <!-- Enterprise -->
+          <article class="card pricing-card">
+            <div>
+              <div class="pricing-name">Enterprise</div>
+              <div class="pricing-price">
+                Let&apos;s talk<span>&nbsp;&mdash; custom</span>
+              </div>
+            </div>
+            <ul class="pricing-features">
+              <li>Enterprise-wide orchestration across all GTM teams.</li>
+              <li>Custom SLAs, approvals, and rollout plans.</li>
+              <li>Fine-grained controls for AI actions and redaction.</li>
+              <li>Dedicated success team and security reviews.</li>
+            </ul>
+            <div style="margin-top: 0.9rem;">
+              <a href="index.html" class="btn btn-secondary">Back to overview</a>
+            </div>
+          </article>
+        </div>
+
+        <div style="margin-top: 2.4rem;">
+          <p style="color: #9ca3af; font-size: 0.92rem;">
+            Not sure where to start? Use the
+            <a class="link-inline" href="support-ops-toolbox.html">Support Ops Toolbox</a>
+            to prototype workflows, then upgrade as you roll AI Business Suite out to more teams.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="currentYear"></span> AI Business Suite. All rights reserved.</p>
     </div>
+  </footer>
 
-    <div class="card">
-      <div class="plan-name">Enterprise</div>
-      <div class="price">Talk to us</div>
-      <p>For high-volume operations with complex workflows and compliance needs.</p>
-      <ul>
-        <li>Unlimited team members</li>
-        <li>Custom SLAs and reporting</li>
-        <li>Dedicated success manager</li>
-        <li>Custom integrations</li>
-        <li>Security and compliance reviews</li>
-      </ul>
-      <a class="cta-btn cta-secondary" href="#trial">Schedule a call</a>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="trial">
-  <h2>Start Your 14‑Day Trial</h2>
-  <p>No credit card required. We’ll set up your environment, plug into your tools, and ship a live automation.</p>
-
-  <div class="lead-form">
-    <form id="pricingTrialForm">
-      <input type="email" name="email" placeholder="you@company.com" required />
-      <input type="text" name="company" placeholder="Company" required />
-      <input type="text" name="team_size" placeholder="Team size (e.g. 5 agents)" />
-      <button class="cta-btn" type="submit">Request Trial Access</button>
-    </form>
-  </div>
-</section>
-
-<footer>
-  &copy; <span id="year"></span> AI Business Suite. All rights reserved.
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  document.getElementById("pricingTrialForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(e.target);
-    const body = Object.fromEntries(formData.entries());
-
-    try {
-      const res = await fetch("/trial-request", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body)
-      });
-
-      const data = await res.json();
-
-      if (data.success) {
-        alert("Your trial request has been submitted. Check your email soon.");
-        e.target.reset();
-      } else {
-        alert("Error submitting trial request: " + (data.error || "Unknown error"));
+  <script>
+    (function () {
+      var yearSpan = document.getElementById('currentYear');
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
       }
-    } catch (err) {
-      alert("Network error submitting trial request.");
-    }
-  });
-</script>
-
+    })();
+  </script>
 </body>
 </html>

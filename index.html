@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Business Suite | Automate Support, Sales &amp; Marketing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Business Suite automates support, sales, and marketing end-to-end with transparent workflows and live demos.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">AI Business Suite</div>
+      <nav class="main-nav">
+        <a href="pricing.html">Pricing</a>
+        <a href="support-ops-toolbox.html">Support Ops Toolbox</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Automate support, sales, and marketing end-to-end.</h1>
+          <p>
+            AI Business Suite centralizes your support, sales, and marketing automation into a single
+            orchestrated platform — from triaging tickets to closing deals and launching campaigns.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="support-ops-toolbox.html">Try the Support Ops Toolbox</a>
+            <a class="btn btn-secondary" href="pricing.html">View Pricing</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's Inside Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">What&apos;s inside AI Business Suite</h2>
+        <p class="section-subtitle">
+          Opinionated workflows for modern support, sales, and marketing teams.
+        </p>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Support automation</h3>
+            <p>
+              Deflect repetitive tickets, summarize conversations, and route issues to the right queue with
+              AI-powered triage, macros, and auto-responses.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Sales &amp; marketing orchestration</h3>
+            <p>
+              Generate outreach emails, chat scripts, and campaign assets from a single place, so your
+              reps and marketers stay aligned on every interaction.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Transparent logs &amp; stats</h3>
+            <p>
+              Every AI decision is logged with inputs, outputs, confidence scores, and performance metrics
+              so you can audit, refine, and scale safely.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Single workspace for GTM</h3>
+            <p>
+              Give support, sales, and marketing a shared source of truth for customer conversations and
+              campaign performance.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Demo Section -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Live Demo (simulated)</h2>
+        <p class="section-subtitle">
+          Try the core flows of AI Business Suite directly in your browser. These examples run locally and
+          do not send data anywhere.
+        </p>
+
+        <div class="live-demo-grid">
+          <!-- Support Demo -->
+          <article class="card demo-card">
+            <h3>Support</h3>
+            <p class="demo-description">
+              Send a support-style message and see how AI Business Suite might respond.
+            </p>
+            <label for="supportInput" class="demo-label">Support message</label>
+            <input id="supportInput" type="text" class="demo-input" placeholder="Describe your issue..." />
+            <button type="button" class="btn btn-primary demo-button" onclick="callSupport()">Send to Support</button>
+            <div id="supportOutput" class="demo-output"></div>
+          </article>
+
+          <!-- Sales Email Demo -->
+          <article class="card demo-card">
+            <h3>Sales Email</h3>
+            <p class="demo-description">
+              Paste a rough outreach idea and we&apos;ll polish it into a ready-to-send email.
+            </p>
+            <label for="salesEmailInput" class="demo-label">Email idea</label>
+            <input id="salesEmailInput" type="text" class="demo-input" placeholder="Cold outreach idea..." />
+            <button type="button" class="btn btn-primary demo-button" onclick="callSalesEmail()">Send Sales Email</button>
+            <div id="salesEmailOutput" class="demo-output"></div>
+          </article>
+
+          <!-- Sales Chat Demo -->
+          <article class="card demo-card">
+            <h3>Sales Chat</h3>
+            <p class="demo-description">
+              Type a live-chat style message and see an optimized reply to keep the conversation moving.
+            </p>
+            <label for="salesChatInput" class="demo-label">Chat message</label>
+            <input id="salesChatInput" type="text" class="demo-input" placeholder="Lead question or objection..." />
+            <button type="button" class="btn btn-primary demo-button" onclick="callSalesChat()">Send Sales Chat</button>
+            <div id="salesChatOutput" class="demo-output"></div>
+          </article>
+
+          <!-- Marketing Demo -->
+          <article class="card demo-card">
+            <h3>Marketing</h3>
+            <p class="demo-description">
+              Pick a topic and a channel to generate a sample social post.
+            </p>
+            <label for="marketingTopic" class="demo-label">Marketing topic</label>
+            <input id="marketingTopic" type="text" class="demo-input" placeholder="Launch, feature, or announcement..." />
+            <label for="marketingPlatform" class="demo-label">Platform</label>
+            <select id="marketingPlatform" class="demo-select">
+              <option value="LinkedIn">LinkedIn</option>
+              <option value="Facebook">Facebook</option>
+              <option value="Twitter">Twitter</option>
+            </select>
+            <button type="button" class="btn btn-primary demo-button" onclick="callMarketing()">Post Marketing</button>
+            <div id="marketingOutput" class="demo-output"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="currentYear"></span> AI Business Suite. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Inline script to set the current year in the footer -->
+  <script>
+    (function () {
+      var yearSpan = document.getElementById('currentYear');
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    })();
+  </script>
+
+  <!-- Main demo script -->
+  <script src="script.js"></script>
+</body>
+</html>
